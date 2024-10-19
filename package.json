@@ -1,5 +1,5 @@
 {
-  "name": "MMM-GoogleKeepTester",
+  "name": "MMM-GoogleKeep",
   "version": "1.0.0",
   "description": "Lists one Note from Google Keep",
   "main": "MMM-GoogleKeep.js",
@@ -21,8 +21,5 @@
     "stylelint-config-standard": "latest",
     "time-grunt": "latest",
     "python-shell": "latest"
-  },
-  "scripts": {
-    "postinstall": "python3 -m venv venv && . venv/bin/activate && pip3 install -U gkeepapi && deactivate"
   }
 }
