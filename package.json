@@ -1,9 +1,9 @@
 {
-  "name": "MMM-GoogleKeep",
+  "name": "MMM-GoogleKeepTester",
   "version": "1.0.0",
   "description": "Lists one Note from Google Keep",
   "main": "MMM-GoogleKeep.js",
-  "author": "taxilof",
+  "author": "KoboseHome",
   "license": "MIT",
   "repository": {
     "type": "git"
@@ -21,5 +21,9 @@
     "stylelint-config-standard": "latest",
     "time-grunt": "latest",
     "python-shell": "latest"
+  }
+  "scripts": {
+    "preinstall": "sudo apt-get update && sudo apt-get install -y python3-pip && sudo apt-get install -y gkeepapi",
+    ...
   }
 }
