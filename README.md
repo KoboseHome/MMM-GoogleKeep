@@ -31,7 +31,7 @@ cd ~/MagicMirror/modules
 
 2. Clone the module to your computer by executing the following command:
 ```
-git clone https://github.com/taxilof/MMM-GoogleKeep.git
+git clone https://github.com/KoboseHome/MMM-GoogleKeep.git
 ```
 
 3. Install the `python-shell` library by executing the following command:
