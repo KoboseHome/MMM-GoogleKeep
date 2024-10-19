@@ -23,7 +23,6 @@
     "python-shell": "latest"
   }
   "scripts": {
-    "preinstall": "sudo apt-get update && sudo apt-get install -y python3-pip && sudo apt-get install -y gkeepapi",
-    ...
+    "preinstall": "sudo apt-get update && sudo apt-get install -y python3-pip && sudo apt-get install -y gkeepapi"
   }
 }
