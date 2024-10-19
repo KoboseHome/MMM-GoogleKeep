@@ -23,6 +23,6 @@
     "python-shell": "latest"
   },
   "scripts": {
-    "postinstall": "python3 -m venv venv && source venv/bin/activate && pip3 install -U gkeepapi && deactivate"
+    "postinstall": "python3 -m venv venv && . venv/bin/activate && pip3 install -U gkeepapi && deactivate"
   }
 }
