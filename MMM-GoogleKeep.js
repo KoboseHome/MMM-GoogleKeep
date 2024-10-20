@@ -13,13 +13,15 @@ Module.register("MMM-GoogleKeep", {
     requiresVersion: "2.1.0", // Required version of MagicMirror
 
     start: function() {
+        // Log the start of the module
         Log.log('Starting module: ' + this.name);
 
         var self = this;
-        var dataRequest = null;
-        var dataNotification = null;
-        var noteData = null;
+        var dataRequest = null; // Variable to store data request
+        var dataNotification = null; // Variable to store data notification
+        var noteData = null; // Variable to store note data
 
+        // Send the configuration to the node helper
         this.sendSocketNotification('MMM-GoogleKeep-CONFIG', this.config);
         this.sendSocketNotification('MMM-GoogleKeep-INITIALIZE', null);
 
