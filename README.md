@@ -41,7 +41,19 @@ npm install
 
 4. Install gkeepapi 
 ```
-pip3 install -U gkeepapi
+cd MMM-GoogleKeep
+```
+```
+python3 -m venv venv
+```
+```
+source venv/bin/activate
+```
+```
+pip install gkeepapi
+```
+```
+deactivate
 ```
 
 ## Troubleshooting

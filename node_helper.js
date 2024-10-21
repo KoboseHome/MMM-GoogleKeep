@@ -6,8 +6,8 @@
  */
 
 const NodeHelper = require("node_helper");
-
 const {PythonShell} = require('python-shell');
+const path = require('path');
 
 var pyshell;
 
@@ -23,9 +23,14 @@ module.exports = NodeHelper.create({
 
     python_start: function () {
         const self = this;
-        pyshell = new PythonShell('modules/' + this.name + '/script/googlekeep.py', { mode: 'json', args: [JSON.stringify(this.config)]});
+        const venvPath = path.join(__dirname, 'venv', 'bin', 'python');
+        const scriptPath = path.join(__dirname, 'script', 'googlekeep.py');
 
-
+        pyshell = new PythonShell(scriptPath, { 
+            mode: 'json', 
+            pythonPath: venvPath,
+            args: [JSON.stringify(this.config)]
+        });
         pyshell.on('message', function (message) {
             console.log(message);
             if (message.hasOwnProperty('debug')){
@@ -39,18 +44,14 @@ module.exports = NodeHelper.create({
                 if(self.initialized){
                     self.sendData(message);
                 }
-            }
-            
+            } 
             if (message.hasOwnProperty('note_text')){
                 if(self.initialized){
                     self.sendSocketNotification('note_text', message.note_text);
                 }
             }
-            
-            
-            
-            
         });
+
         pyshell.end(function (err) {
             if (err) throw err;
             console.log("[" + self.name + "] " + 'finished running...');
@@ -76,8 +77,6 @@ module.exports = NodeHelper.create({
             // Send notification
             this.sendNotificationTest(this.anotherFunction()); //Is possible send objects :)
         }
-        
-        
         
         if (notification === 'MMM-GoogleKeep-CONFIG') {
         this.config = payload;
